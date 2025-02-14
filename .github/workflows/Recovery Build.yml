@@ -125,6 +125,8 @@ jobs:
       run: |
         cd ${{ steps.pwd.outputs.workspace-folder }}/fox_${{ github.event.inputs.MANIFEST_BRANCH }}
         export OF_USE_LZMA_COMPRESSION=1
+        export OF_DISABLE_MIUI_SPECIFIC_FEATURES=1
+        export FOX_VANILLA_BUILD=1
         set +e
         source build/envsetup.sh
         export ALLOW_MISSING_DEPENDENCIES=true
